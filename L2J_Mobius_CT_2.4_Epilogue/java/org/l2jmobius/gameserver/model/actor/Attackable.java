@@ -1056,7 +1056,7 @@ public class Attackable extends Npc
 						{
 							// do nothing
 						}
-						else if (Config.AUTO_LOOT_HERBS && item.hasExImmediateEffect())
+						else if (Config.AUTO_LOOT_HERBS && item.hasExImmediateEffect() && (!Config.DISABLE_DOUBT || (item.getId() != 10657)))
 						{
 							for (SkillHolder skillHolder : item.getSkills())
 							{
@@ -1064,7 +1064,7 @@ public class Attackable extends Npc
 							}
 							mainDamageDealer.broadcastInfo(); // ? check if this is necessary
 						}
-						else
+						else if (!Config.DISABLE_DOUBT || (item.getId() != 10657))
 						{
 							final Item droppedItem = dropItem(mainDamageDealer, drop); // drop the item on the ground
 							if (Config.FAKE_PLAYER_CAN_PICKUP)

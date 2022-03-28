@@ -1349,6 +1349,7 @@ public class Config
 	public static Map<Integer, Integer> L2JBRASIL_REWARD = new HashMap<>();
 	public static int L2JBRASIL_DUALBOXES_ALLOWED;
 	public static boolean ALLOW_L2JBRASIL_GAME_SERVER_REPORT;
+	public static boolean DISABLE_DOUBT;
 	
 	public static boolean ENABLE_GUI;
 	public static boolean DARK_THEME;
@@ -1747,6 +1748,7 @@ public class Config
 			AUTO_LEARN_SKILLS_WITHOUT_ITEMS = characterConfig.getBoolean("AutoLearnSkillsWithoutItems", false);
 			AUTO_LEARN_FS_SKILLS = characterConfig.getBoolean("AutoLearnForgottenScrollSkills", false);
 			AUTO_LOOT_HERBS = characterConfig.getBoolean("AutoLootHerbs", false);
+			DISABLE_DOUBT = characterConfig.getBoolean("DisableDoubtHerb", false);
 			BUFFS_MAX_AMOUNT = characterConfig.getByte("MaxBuffAmount", (byte) 20);
 			DANCES_MAX_AMOUNT = characterConfig.getByte("MaxDanceAmount", (byte) 12);
 			DANCE_CANCEL_BUFF = characterConfig.getBoolean("DanceCancelBuff", false);
