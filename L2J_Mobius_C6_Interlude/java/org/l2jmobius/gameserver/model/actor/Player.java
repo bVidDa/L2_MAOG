@@ -3561,7 +3561,7 @@ public class Player extends Playable
 				}
 			}
 			// Auto use herbs - autoloot
-			if (ItemTable.getInstance().createDummyItem(itemId).getItemType() == EtcItemType.HERB) // If item is herb dont add it to iv :]
+			if ((ItemTable.getInstance().createDummyItem(itemId).getItemType() == EtcItemType.HERB) && (!Config.DISABLE_DOUBT || itemId != 10657)) // If item is herb dont add it to iv :]
 			{
 				if (!isCastingNow() && !isCastingPotionNow())
 				{
@@ -3586,7 +3586,7 @@ public class Player extends Playable
 					ThreadPool.schedule(new HerbTask(process, itemId, count, reference, sendMessage), _herbstask);
 				}
 			}
-			else
+			else if (!Config.DISABLE_DOUBT || itemId != 10657)
 			{
 				// Add the item to inventory
 				final Item item = _inventory.addItem(process, itemId, count, this, reference);

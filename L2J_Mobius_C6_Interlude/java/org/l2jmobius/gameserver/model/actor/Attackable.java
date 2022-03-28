@@ -1942,7 +1942,7 @@ public class Attackable extends Npc
 							break;
 						}
 						
-						if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
+						if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS && (!Config.DISABLE_DOUBT || (item.getId() != 10657)))
 						{
 							final ItemTemplate itemTemplate = ItemTable.getInstance().getTemplate(item.getId());
 							if (!player.getInventory().validateCapacity(itemTemplate))
@@ -1954,7 +1954,7 @@ public class Attackable extends Npc
 								player.addItem("AutoLoot", item.getId(), item.getCount(), this, true);
 							}
 						}
-						else
+						else if (!Config.DISABLE_DOUBT || (item.getId() != 10657))
 						{
 							dropItem(player, item);
 						}
