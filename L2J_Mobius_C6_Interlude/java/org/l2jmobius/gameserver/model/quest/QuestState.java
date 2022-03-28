@@ -633,7 +633,7 @@ public class QuestState
 		int count = amount;
 		if ((itemId == 57) && ((questId < 217) || (questId > 233)) && ((questId < 401) || (questId > 418)))
 		{
-			count = (int) (count * Config.RATE_QUESTS_REWARD);
+			count = (int) (count * Config.RATE_QUESTS_REWARD_ADENA);
 		}
 		
 		// Set quantity of item
@@ -1079,7 +1079,7 @@ public class QuestState
 	 */
 	public void rewardExpAndSp(int exp, int sp)
 	{
-		_player.addExpAndSp((int) _player.calcStat(Stat.EXPSP_RATE, exp * Config.RATE_QUESTS_REWARD, null, null), (int) _player.calcStat(Stat.EXPSP_RATE, sp * Config.RATE_QUESTS_REWARD, null, null));
+		_player.addExpAndSp((int) _player.calcStat(Stat.EXPSP_RATE, exp * Config.RATE_QUESTS_REWARD_XP, null, null), (int) _player.calcStat(Stat.EXPSP_RATE, sp * Config.RATE_QUESTS_REWARD_SP, null, null));
 	}
 	
 	/**
