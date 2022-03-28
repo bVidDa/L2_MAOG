@@ -1836,7 +1836,14 @@ public class Attackable extends Npc
 					}
 					else
 					{
-						dropItem(player, item); // drop the item on the ground
+						if (!Config.AUTO_LOOT_ADENA)
+						{
+							player.doAutoLoot(this, item);
+						}
+						else
+						{
+							dropItem(player, item);
+						} // drop the item on the ground
 					}
 					
 					// Broadcast message if RaidBoss was defeated
