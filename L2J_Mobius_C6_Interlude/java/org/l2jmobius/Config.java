@@ -1101,6 +1101,16 @@ public class Config
 	public static boolean ENABLE_GUI;
 	public static boolean DARK_THEME;
 	
+	public static boolean AUTO_LOOT_ADENA;
+	
+	public static boolean DISABLE_DOUBT;
+	
+	public static float RATE_QUESTS_REWARD_ADENA;
+	
+	public static float RATE_QUESTS_REWARD_XP;
+	
+	public static float RATE_QUESTS_REWARD_SP;
+	
 	public static void loadAccessConfig()
 	{
 		final PropertiesParser accessConfig = new PropertiesParser(ACCESS_CONFIG_FILE);
@@ -1214,6 +1224,9 @@ public class Config
 		RATE_PARTY_XP = ratesConfig.getFloat("RatePartyXp", 1f);
 		RATE_PARTY_SP = ratesConfig.getFloat("RatePartySp", 1f);
 		RATE_QUESTS_REWARD = ratesConfig.getFloat("RateQuestsReward", 1f);
+		RATE_QUESTS_REWARD_ADENA = ratesConfig.getFloat("RateQuestsRewardAdena", 1f);
+		RATE_QUESTS_REWARD_XP = ratesConfig.getFloat("RateQuestsRewardXp", 1f);
+		RATE_QUESTS_REWARD_SP = ratesConfig.getFloat("RateQuestsRewardSp", 1f);
 		RATE_DROP_ADENA = ratesConfig.getFloat("RateDropAdena", 1f);
 		RATE_CONSUMABLE_COST = ratesConfig.getFloat("RateConsumableCost", 1f);
 		RATE_DROP_ITEMS = ratesConfig.getFloat("RateDropItems", 1f);
@@ -2554,7 +2567,9 @@ public class Config
 	{
 		final PropertiesParser characterConfig = new PropertiesParser(CHARACTER_CONFIG_FILE);
 		AUTO_LOOT = characterConfig.getBoolean("AutoLoot", true);
+		AUTO_LOOT_ADENA = characterConfig.getBoolean("AutoLootAdena", true);
 		AUTO_LOOT_HERBS = characterConfig.getBoolean("AutoLootHerbs", true);
+		DISABLE_DOUBT = characterConfig.getBoolean("DisableDoubtHerb", false);
 		AUTO_LOOT_BOSS = characterConfig.getBoolean("AutoLootBoss", true);
 		AUTO_LEARN_SKILLS = characterConfig.getBoolean("AutoLearnSkills", false);
 		AUTO_LEARN_DIVINE_INSPIRATION = characterConfig.getBoolean("AutoLearnDivineInspiration", false);
